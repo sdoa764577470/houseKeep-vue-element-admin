@@ -1,10 +1,11 @@
 <template>
   <div class="customer">
 		<!-- 按钮 -->
-		<div>
+    <!-- 只查询 无权添加和批量删除 -->
+		<!-- <div>
 			<el-button @click="toAddHandler" size="small" type="primary">添加</el-button>
 			<el-button @click="batchDeleteHandler"  size="small" type="danger">批量删除</el-button>
-		</div>
+		</div> -->
 		<!-- 表格 -->
 		<div v-loading="loading">
       <el-table :data="customers" size="mini"  @selection-change="handleSelectionChange">
@@ -15,8 +16,8 @@
         <el-table-column prop="status" label="状态"></el-table-column>
         <el-table-column label="操作">
           <template #default="record">
-              <i class="el-icon-delete" href="" @click.prevent="deleteHandler(record.row.id)"></i> &nbsp;
-							<i class="el-icon-edit-outline" href="" @click.prevent="editHandler(record.row)"></i> &nbsp;
+              <!-- <i class="el-icon-delete" href="" @click.prevent="deleteHandler(record.row.id)"></i> &nbsp;
+							<i class="el-icon-edit-outline" href="" @click.prevent="editHandler(record.row)"></i> &nbsp; -->
               <a href="" @click.prevent="toDetailsHandler(record.row)">详情</a>
           </template>
         </el-table-column>

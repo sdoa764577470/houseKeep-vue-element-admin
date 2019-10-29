@@ -107,17 +107,32 @@ export const asyncRoutes = [
         component: () => import('@/pages/customer/List'),
         name: 'customer',
         meta: { title: '顾客管理', icon: 'tab' }
-      },
-      {
+      }, {
         path: 'details',
         hidden:true,
         component: () => import('@/pages/customer/Details'),
-        name: 'details',
+        name: 'customer_details',
         meta: { title: '顾客详情', icon: 'tab' }
       }
     ]
-  } ,
-  {
+  } ,{
+    path: '/waiter',
+    component: Layout,
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/pages/waiter/List'),
+        name: 'waiter_list',
+        meta: { title: '员工管理', icon: 'tab' }
+      },  {
+        path: 'details',
+        hidden:true,
+        component: () => import('@/pages/waiter/Details'),
+        name: 'waiter_details',
+        meta: { title: '员工详情', icon: 'tab' }
+      }
+    ]
+  },{
     path: '/check',
     component: Layout,
     meta:{title:"审核管理", icon: 'tab' },
@@ -136,6 +151,18 @@ export const asyncRoutes = [
       }
     ]
   } ,
+  {
+    path: '/order',
+    component: Layout,
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/pages/order/List'),
+        name: 'order_list',
+        meta: { title: '订单管理', icon: 'tab' }
+      }
+    ]
+  }  ,
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

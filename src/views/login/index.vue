@@ -97,13 +97,13 @@ export default {
     }
     return {
       loginForm: {
-        username: 'customer1',
+        username: 'admin',
         password: '123321',
-        type:"customer"
+        type:"manager"
       },
       loginRules: {
-        username: [{ required: true, trigger: 'blur'}],
-        password: [{ required: true, trigger: 'blur'}]
+        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
       },
       passwordType: 'password',
       capsTooltip: false,
