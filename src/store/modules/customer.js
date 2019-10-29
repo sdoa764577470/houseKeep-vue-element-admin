@@ -66,9 +66,10 @@ export default {
       let response = await request.get("/customer/findAll");
       // 2. 将查询结果更新到state中
       commit("refreshCustomers",response.data);
-      setTimeout(()=>{
-        commit("endLoading")
-      },1000)
+      commit("endLoading")
+      // setTimeout(()=>{
+      //   commit("endLoading")
+      // },1000)
     },
     // payload 顾客信息
     async saveOrUpdateCustomer({commit,dispatch},payload){
